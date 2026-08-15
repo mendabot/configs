@@ -1,14 +1,17 @@
 # @mendabot/configs
 
+[![CI](https://img.shields.io/github/actions/workflow/status/mendabot/configs/build.yml?branch=main&logo=github&label=CI)](https://github.com/mendabot/configs/actions/workflows/build.yml)
+[![license](https://img.shields.io/github/license/mendabot/configs)](./LICENSE)
+
 Shared ESLint, Prettier and release configuration for Mendabot projects.
 
 pnpm workspace. Packages live in `workspace/*`
 
-```
-workspace/eslint/    @mendabot/eslint-config
-workspace/prettier/  @mendabot/prettier-config
-workspace/release/   @mendabot/release-scripts
-```
+| Package | Source | Version |
+| --- | --- | --- |
+| [`@mendabot/eslint-config`](https://www.npmjs.com/package/@mendabot/eslint-config) | `workspace/eslint/` | [![npm](https://img.shields.io/npm/v/@mendabot/eslint-config?label=)](https://www.npmjs.com/package/@mendabot/eslint-config) |
+| [`@mendabot/prettier-config`](https://www.npmjs.com/package/@mendabot/prettier-config) | `workspace/prettier/` | [![npm](https://img.shields.io/npm/v/@mendabot/prettier-config?label=)](https://www.npmjs.com/package/@mendabot/prettier-config) |
+| [`@mendabot/release-scripts`](https://www.npmjs.com/package/@mendabot/release-scripts) | `workspace/release/` | [![npm](https://img.shields.io/npm/v/@mendabot/release-scripts?label=)](https://www.npmjs.com/package/@mendabot/release-scripts) |
 
 Packages are published publicly to [npmjs.org](https://www.npmjs.com) on release, with provenance.
 Everything here is MIT licensed — see [LICENSE](./LICENSE).
