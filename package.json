@@ -22,7 +22,7 @@
 		"@mendabot/prettier-config": "workspace:*",
 		"@mendabot/release-scripts": "workspace:*",
 		"conventional-changelog-conventionalcommits": "^9.3.1",
-		"eslint": "^10.1.0",
+		"eslint": "^10.8.1",
 		"prettier": "^3.9.6",
 		"semantic-release": "^25.0.5"
 	},
