@@ -1,0 +1,42 @@
+{
+	"name": "@mendabot/prettier-config",
+	"version": "0.0.0",
+	"description": "Prettier config shared across our codebase",
+	"keywords": [
+		"config",
+		"prettier",
+		"prettier-config"
+	],
+	"homepage": "https://github.com/mendabot/configs/tree/main/workspace/prettier#readme",
+	"bugs": "https://github.com/mendabot/configs/issues",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mendabot/configs.git",
+		"directory": "workspace/prettier"
+	},
+	"license": "MIT",
+	"author": "Mendabot <mendabot@pm.me>",
+	"type": "module",
+	"exports": {
+		".": "./index.js"
+	},
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"scripts": {
+		"lint": "echo \"Prettier config lint\"",
+		"lint:fix": "echo \"Prettier config lint:fix\"",
+		"build": "echo \"Prettier config built\"",
+		"dev": "echo \"Prettier config in dev mode\"",
+		"clean": "echo \"Prettier config cleaned\""
+	},
+	"peerDependencies": {
+		"prettier": ">=3"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true,
+		"registry": "https://registry.npmjs.org"
+	}
+}

@@ -1,0 +1,66 @@
+{
+	"name": "@mendabot/release-scripts",
+	"version": "0.0.0",
+	"description": "Scripts used for releasing our packages",
+	"keywords": [
+		"changelog",
+		"monorepo",
+		"pnpm",
+		"release",
+		"semantic-release"
+	],
+	"homepage": "https://github.com/mendabot/configs/tree/main/workspace/release#readme",
+	"bugs": "https://github.com/mendabot/configs/issues",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mendabot/configs.git",
+		"directory": "workspace/release"
+	},
+	"license": "MIT",
+	"author": "Mendabot <mendabot@pm.me>",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"bin": {
+		"release-scripts": "dist/cli.js"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"scripts": {
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix .",
+		"dev": "tsc -w",
+		"build": "tsc",
+		"clean": "rm -rf dist"
+	},
+	"dependencies": {
+		"@semantic-release/changelog": "^7.0.0",
+		"@semantic-release/exec": "^7.1.0",
+		"@semantic-release/git": "^11.0.1",
+		"@semantic-release/release-notes-generator": "^14.1.0",
+		"commander": "^15.0.0",
+		"conventional-changelog-conventionalcommits": "^9.3.1",
+		"glob": "^13.0.6",
+		"semantic-release": "^25.0.5"
+	},
+	"devDependencies": {
+		"@mendabot/eslint-config": "workspace:*",
+		"@types/node": "^26.0.1",
+		"eslint": "^10.1.0",
+		"prettier": "^3.9.6",
+		"typescript": "^6.0.3"
+	},
+	"publishConfig": {
+		"access": "public",
+		"provenance": true,
+		"registry": "https://registry.npmjs.org"
+	}
+}

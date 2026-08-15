@@ -1,0 +1,37 @@
+version: 2
+
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+      time: '08:00'
+      timezone: Europe/Prague
+    groups:
+      semantic-release:
+        patterns:
+          - '@semantic-release/*'
+
+      eslint:
+        patterns:
+          - 'typescript-eslint'
+          - '@eslint*'
+          - 'eslint*'
+          - '@stylistic/eslint-plugin'
+
+    ignore:
+      # conventional-changelog-conventionalcommits 10.x targets conventional-changelog-writer 9,
+      # but @semantic-release/release-notes-generator still pins writer ^8. On 10.x the preset returns
+      # template/headerPartial/commitPartial as functions while writer 8 expects Handlebars strings,
+      # so the generated notes silently collapse to just the version header.
+      # Upstream: https://github.com/semantic-release/release-notes-generator/issues/992
+      # Unpin once release-notes-generator ships a release depending on conventional-changelog-writer ^9.
+      - dependency-name: 'conventional-changelog-conventionalcommits'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+      time: '08:00'
+      timezone: Europe/Prague

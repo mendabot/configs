@@ -1,0 +1,46 @@
+name: Stage packages for npm
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish-packages:
+    name: Publish packages
+    # Must be a GitHub-hosted runner — npm does not support provenance or trusted
+    # publishing from self-hosted or third-party runners.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      # Lets npm request the OIDC token used for trusted publishing and provenance.
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
+      - name: Build
+        run: pnpm run build
+
+      # pnpm packs (it rewrites `workspace:*` to real versions), npm uploads
+      # (it is the only client that speaks OIDC trusted publishing).
+      #
+      # `stage publish` submits to a staging area instead of going live. A maintainer
+      # must then approve each package with 2FA, on npmjs.com under Staged Packages or
+      # via `npm stage approve <stage-id>`. This job succeeding does NOT mean the
+      # versions are on the registry — staging cannot be approved from CI by design.
+      - name: Stage packages
+        run: |
+          for pkg in workspace/*/; do
+            tarball="$(cd "$pkg" && pnpm pack --pack-destination "$RUNNER_TEMP" | tail -1)"
+            echo "Staging $tarball"
+            npm stage publish "$tarball" --provenance --access public
+          done
+          echo "Staged. Approve with 2FA at https://www.npmjs.com/ -> Staged Packages"
+        env:
+          # Bootstrap only. Trusted publishing cannot be configured until a package
+          # exists on npm, so the first release authenticates with a token. Once the
+          # trusted publishers are set up on npmjs.com, delete this and the secret.
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

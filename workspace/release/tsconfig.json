@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"compilerOptions": {
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"target": "esnext",
+		"lib": ["ESNext"],
+		"types": ["node"],
+		"strict": true,
+		"noImplicitAny": true,
+		"declaration": true,
+		"declarationDir": "./dist",
+		"outDir": "./dist",
+		"rootDir": "./",
+		"inlineSourceMap": true,
+		"inlineSources": true,
+		"experimentalDecorators": true,
+		"incremental": true,
+		"tsBuildInfoFile": "./.tsbuildinfo",
+		"skipLibCheck": true
+	},
+	"include": ["**/*.ts"],
+	"exclude": ["dist", "node_modules"]
+}
