@@ -26,7 +26,7 @@ export function createSemanticReleaseConfig({
 			[
 				'@semantic-release/exec',
 				{
-					prepareCmd: 'pnpm exec release-scripts before-release ${nextRelease.version}',
+					prepareCmd: 'node ./node_modules/@mendabot/release-scripts/dist/cli.js before-release ${nextRelease.version}',
 				},
 			],
 			[
