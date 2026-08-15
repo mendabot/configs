@@ -39,8 +39,3 @@ jobs:
             npm stage publish "$tarball" --provenance --access public
           done
           echo "Staged. Approve with 2FA at https://www.npmjs.com/ -> Staged Packages"
-        env:
-          # Bootstrap only. Trusted publishing cannot be configured until a package
-          # exists on npm, so the first release authenticates with a token. Once the
-          # trusted publishers are set up on npmjs.com, delete this and the secret.
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
