@@ -1,6 +1,6 @@
 {
 	"name": "@mendabot/release-scripts",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "Scripts used for releasing our packages",
 	"keywords": [
 		"changelog",
