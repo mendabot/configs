@@ -38,14 +38,14 @@
 		"@eslint/json": "^2.0.0",
 		"@stylistic/eslint-plugin": "^5.9.0",
 		"eslint-config-prettier": "^10.1.8",
-		"eslint-plugin-perfectionist": "^5.6.0",
+		"eslint-plugin-perfectionist": "^5.10.1",
 		"eslint-plugin-prettier": "^5.5.6",
-		"eslint-plugin-unicorn": "^71.1.0",
+		"eslint-plugin-unicorn": "^73.0.0",
 		"globals": "^17.10.0",
-		"typescript-eslint": "^8.60.1"
+		"typescript-eslint": "^8.67.0"
 	},
 	"devDependencies": {
-		"eslint": "^10.1.0",
+		"eslint": "^10.8.1",
 		"prettier": "^3.9.6"
 	},
 	"peerDependencies": {
