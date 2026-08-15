@@ -1,3 +1,12 @@
+## [0.0.2](https://github.com/mendabot/configs/compare/v0.0.1...v0.0.2) (2026-08-15)
+
+### Chores
+
+* **deps:** bump semantic-release from 25.0.8 to 25.0.9 ([#2](https://github.com/mendabot/configs/issues/2)) ([2b86244](https://github.com/mendabot/configs/commit/2b86244c8065fa02281cdb5adc807d9559b0d753))
+* **deps:** bump the eslint group across 1 directory with 4 updates ([#1](https://github.com/mendabot/configs/issues/1)) ([d18d149](https://github.com/mendabot/configs/commit/d18d1498918587977efa92338b6771b2596785a9))
+* improve readme files ([9d46817](https://github.com/mendabot/configs/commit/9d46817252df155ec75c24b364b0153186cd5ed4))
+* use trusted publishing ([71b1987](https://github.com/mendabot/configs/commit/71b19876397159ba13ca1e96b440a26e9a0209d0))
+
 ## [0.0.1](https://github.com/mendabot/configs/compare/v0.0.0...v0.0.1) (2026-08-15)
 
 ### Bug Fixes
